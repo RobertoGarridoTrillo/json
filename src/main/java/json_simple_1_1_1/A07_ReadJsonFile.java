@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package json;
+package json_simple_1_1_1;
 
 /**
  *
@@ -23,8 +18,8 @@ public class A07_ReadJsonFile
    public static void main(String[] args) throws Exception
    {
       // parsing file "JSONExample.json" 
-      Object obj = new JSONParser().parse(new FileReader("JSONExample.json"));
-
+      Object obj = new JSONParser()
+              .parse(new FileReader("src/main/java/resources/JSONExample.json"));
       // typecasting obj to JSONObject 
       JSONObject jo = (JSONObject) obj;
 

@@ -3,26 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package json;
+package json_simple_1_1_1;
 
-import org.json.simple.JSONObject;
-
-
+import java.util.ArrayList;
+import java.util.List;
+import org.json.simple.JSONValue;
 
 /**
  *
  * @author Roberto Garrido Trillo
  */
-public class A01_Encode
+public class A04_ArrayEncodeUsingList
 {
 
    public static void main(String[] args)
    {
-      JSONObject obj = new JSONObject();
-      obj.put("name", "sonoo");
-      obj.put("age", 27);
-      obj.put("salary", 6000000);
+
+      List obj = new ArrayList();
+      obj.add("sonoo");
+      obj.add(27);
+      obj.add(6000000);
+      String jsonText = JSONValue.toJSONString(obj);
       System.out.println(obj);
    }
-
 }
+

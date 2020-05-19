@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package json;
+package json_simple_1_1_1;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -16,12 +16,9 @@ import org.json.simple.JSONObject;
  *
  * @author Roberto Garrido Trillo
  */
-public class A06_WriteJsonFile
+public class A06_WriteJsonFile {
 
-{
-
-   public static void main(String[] args) throws FileNotFoundException
-   {
+   public static void main(String[] args) throws FileNotFoundException {
       // creating JSONObject 
       JSONObject jo = new JSONObject();
 
@@ -30,6 +27,7 @@ public class A06_WriteJsonFile
       jo.put("lastName", "Smith");
       jo.put("age", 25);
 
+      // ---------------------------------------------
       // for address data, first create LinkedHashMap 
       Map m = new LinkedHashMap(4);
       m.put("streetAddress", "21 2nd Street");
@@ -40,21 +38,24 @@ public class A06_WriteJsonFile
       // putting address to JSONObject 
       jo.put("address", m);
 
+      // -----------------------------------------------
       // for phone numbers, first create JSONArray  
       JSONArray ja = new JSONArray();
 
+      // I reuse the map
       m = new LinkedHashMap(2);
       m.put("type", "home");
       m.put("number", "212 555-1234");
 
-      // adding map to list 
+      // adding map to Arry 
       ja.add(m);
 
+      // I reuse the map, again
       m = new LinkedHashMap(2);
       m.put("type", "fax");
       m.put("number", "212 555-1234");
 
-      // adding map to list 
+      // adding map to Arry, again
       ja.add(m);
 
       // putting phoneNumbers to JSONObject 
@@ -62,8 +63,9 @@ public class A06_WriteJsonFile
 
       /* Example of try with resource */
       try (
-              // writing JSON to file:"JSONExample.json" in cwd
-              PrintWriter pw = new PrintWriter("JSONExample.json"))
+              PrintWriter pw = 
+                     new PrintWriter("src/main/java/resources/JSONExample.json");
+              ) 
       {
          pw.write(jo.toJSONString());
 
@@ -71,4 +73,7 @@ public class A06_WriteJsonFile
       }
 
    }
+
+
 }
+

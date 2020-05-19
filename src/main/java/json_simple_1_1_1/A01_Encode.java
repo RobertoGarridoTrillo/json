@@ -3,25 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package json;
+package json_simple_1_1_1;
 
-import java.util.HashMap;
-import java.util.Map;
-import org.json.simple.JSONValue;
+import org.json.simple.JSONObject;
+
 
 /**
  *
- * @author ROBEG
+ * @author Roberto Garrido Trillo
  */
-public class A02_EncodeUsingMap
+public class A01_Encode
 {
-   public static void main(String[] args) {
-   
-      Map obj = new HashMap();
+
+   public static void main(String[] args)
+   {
+      JSONObject obj = new JSONObject();
       obj.put("name", "sonoo");
       obj.put("age", 27);
       obj.put("salary", 6000000);
-      String jsonText = JSONValue.toJSONString(obj);
       System.out.println(obj);
-}
+   }
+
 }
